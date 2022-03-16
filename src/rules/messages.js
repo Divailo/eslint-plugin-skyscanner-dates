@@ -1,3 +1,3 @@
 module.exports = {
-  deprecated: issue => `Deprecated ${issue}, use saddlebag-date package instead.`,
+  deprecated: issue => `Deprecated ${issue}, use date-fns package instead.`,
 };

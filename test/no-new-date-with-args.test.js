@@ -16,12 +16,12 @@ ruleTester.run('no-new-date-with-args', rules['no-new-date-with-args'], {
   }],
   invalid: [{
     code: 'const date = new Date(1234);',
-    errors: [{ message: 'Deprecated new Date(args) expression, use saddlebag-date package instead.' }],
+    errors: [{ message: 'Deprecated new Date(args) expression, use date-fns package instead.' }],
   }, {
     code: 'const date = new Date("Fri Mar 08 2019 15:46:56 GMT+0000 (Greenwich Mean Time)");',
-    errors: [{ message: 'Deprecated new Date(args) expression, use saddlebag-date package instead.' }],
+    errors: [{ message: 'Deprecated new Date(args) expression, use date-fns package instead.' }],
   }, {
     code: 'const arg = 7; const date = new Date(arg);',
-    errors: [{ message: 'Deprecated new Date(args) expression, use saddlebag-date package instead.' }],
+    errors: [{ message: 'Deprecated new Date(args) expression, use date-fns package instead.' }],
   }],
 });

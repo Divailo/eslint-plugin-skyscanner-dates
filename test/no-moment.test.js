@@ -17,9 +17,9 @@ ruleTester.run('no-moment', rules['no-moment'], {
   }],
   invalid: [{
     code: 'const moment = require("moment");',
-    errors: [{ message: 'Deprecated require of moment package, use saddlebag-date package instead.' }],
+    errors: [{ message: 'Deprecated require of moment package, use date-fns package instead.' }],
   }, {
     code: 'import moment from "moment";',
-    errors: [{ message: 'Deprecated import of moment package, use saddlebag-date package instead.' }],
+    errors: [{ message: 'Deprecated import of moment package, use date-fns package instead.' }],
   }],
 });

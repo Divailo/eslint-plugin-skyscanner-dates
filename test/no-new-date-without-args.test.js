@@ -20,6 +20,6 @@ ruleTester.run('no-new-date-without-args', rules['no-new-date-without-args'], {
   }],
   invalid: [{
     code: 'const date = new Date()',
-    errors: [{ message: 'Deprecated new Date() expression, use saddlebag-date package instead.' }],
+    errors: [{ message: 'Deprecated new Date() expression, use date-fns package instead.' }],
   }],
 });
