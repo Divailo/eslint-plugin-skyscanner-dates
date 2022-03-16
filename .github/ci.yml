@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get source code
+        uses: actions/checkout@v1
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+
+      - name: Install
+        run: npm install
+
+      - name: Lint
+        run: npm run lnt
+
+      - name: Test
+        run: npm test
