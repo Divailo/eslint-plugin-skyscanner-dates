@@ -19,7 +19,7 @@ module.exports = {
   }),
   meta: {
     docs: {
-      description: 'Deprecate new Date(args) expression in favour of date-fns npm package',
+      description: 'Deprecate the use of saddlebag-date module in favour of date-fns npm package',
     },
     type: 'problem',
   },

@@ -2,6 +2,7 @@ const noSaddlebagDate = require('./rules/no-saddlebag-date');
 const noMoment = require('./rules/no-moment');
 const noNewDateWithArgs = require('./rules/no-new-date-with-args');
 const noNewDateWithoutArgs = require('./rules/no-new-date-without-args');
+const noDayJS = require('./rules/no-dayjs');
 
 module.exports = {
   configs: {
@@ -38,5 +39,6 @@ module.exports = {
     'no-moment': noMoment,
     'no-new-date-with-args': noNewDateWithArgs,
     'no-new-date-without-args': noNewDateWithoutArgs,
+    'no-dayjs': noDayJS,
   },
 };
