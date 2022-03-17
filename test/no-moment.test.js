@@ -10,16 +10,32 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run('no-moment', rules['no-moment'], {
-  valid: [{
-    code: 'const test = require("test");',
-  }, {
-    code: 'const test = require("a-moment");',
-  }],
-  invalid: [{
-    code: 'const moment = require("moment");',
-    errors: [{ message: 'Deprecated require of moment package, use saddlebag-date package instead.' }],
-  }, {
-    code: 'import moment from "moment";',
-    errors: [{ message: 'Deprecated import of moment package, use saddlebag-date package instead.' }],
-  }],
+  valid: [
+    {
+      code: 'const test = require("test");',
+    },
+    {
+      code: 'const test = require("a-moment");',
+    },
+  ],
+  invalid: [
+    {
+      code: 'const moment = require("moment");',
+      errors: [
+        {
+          message:
+            'Deprecated require of moment package, use saddlebag-date package instead.',
+        },
+      ],
+    },
+    {
+      code: 'import moment from "moment";',
+      errors: [
+        {
+          message:
+            'Deprecated import of moment package, use saddlebag-date package instead.',
+        },
+      ],
+    },
+  ],
 });

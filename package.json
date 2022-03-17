@@ -4,7 +4,7 @@
   "description": "eslint plugin to handle dates safely",
   "main": "src/index.js",
   "engines": {
-    "node": "^8.12.0",
+    "node": ">=8.12.0",
     "npm": ">=5"
   },
   "scripts": {
@@ -12,7 +12,7 @@
     "lint:js:staged": "eslint . --ignore-path .gitignore",
     "lint:js:fix": "npm run lint:js -- --fix",
     "lint:js:fix:staged": "eslint . --ignore-path .gitignore --fix",
-    "lint": "ensure-node-env && npm run lint:js",
+    "lint": "npm run lint:js",
     "test": "jest",
     "coverage": "jest --coverage",
     "precommit": "lint-staged",
@@ -24,23 +24,21 @@
     ]
   },
   "devDependencies": {
+    "@skyscanner/eslint-config-skyscanner": "^11.1.0",
     "babel-eslint": "^10.0.1",
-    "ensure-node-env": "^1.0.8",
-    "eslint": "^5.15.3",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-skyscanner": "^4.0.0",
+    "eslint": "^7.32.0",
     "eslint-plugin-backpack": "^0.2.3",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
     "husky": "^1.0.1",
-    "jest": "^24.5.0",
+    "jest": "^27.5.1",
     "jsdoc": "^3.4.3",
     "jsdoc-to-markdown": "^4.0.1",
     "lint-staged": "^8.1.5"
   },
   "peerDependencies": {
-    "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0"
+    "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
   },
   "repository": {
     "type": "git",
@@ -48,6 +46,7 @@
   },
   "license": "Apache-2.0",
   "files": [
-    "src"
+    "src",
+    "README.md"
   ]
 }
