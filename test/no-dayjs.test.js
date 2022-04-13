@@ -10,16 +10,32 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run('no-dayjs', rules['no-dayjs'], {
-  valid: [{
-    code: 'const test = require("test");',
-  }, {
-    code: 'const test = require("test-dayjs");',
-  }],
-  invalid: [{
-    code: 'const dayjs = require("dayjs");',
-    errors: [{ message: 'Deprecated require of dayjs package, use date-fns package instead.' }],
-  }, {
-    code: 'import dayjs from "dayjs";',
-    errors: [{ message: 'Deprecated import of dayjs package, use date-fns package instead.' }],
-  }],
+  valid: [
+    {
+      code: 'const test = require("test");',
+    },
+    {
+      code: 'const test = require("test-dayjs");',
+    },
+  ],
+  invalid: [
+    {
+      code: 'const dayjs = require("dayjs");',
+      errors: [
+        {
+          message:
+            'Deprecated require of dayjs package, use date-fns package instead.',
+        },
+      ],
+    },
+    {
+      code: 'import dayjs from "dayjs";',
+      errors: [
+        {
+          message:
+            'Deprecated import of dayjs package, use date-fns package instead.',
+        },
+      ],
+    },
+  ],
 });

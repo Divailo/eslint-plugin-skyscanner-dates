@@ -10,7 +10,8 @@ module.exports = {
   }),
   meta: {
     docs: {
-      description: 'Deprecate new Date() expression in favour of date-fns npm package',
+      description:
+        'Deprecate new Date() expression in favour of date-fns npm package',
     },
     type: 'problem',
   },

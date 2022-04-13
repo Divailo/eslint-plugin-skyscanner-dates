@@ -20,7 +20,8 @@ module.exports = {
   }),
   meta: {
     docs: {
-      description: 'Deprecate the use of moment/moment-timezone module in favour of date-fns npm package',
+      description:
+        'Deprecate the use of moment/moment-timezone module in favour of date-fns npm package',
     },
     type: 'problem',
   },
