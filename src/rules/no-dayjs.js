@@ -1,7 +1,7 @@
 const { deprecated } = require('./messages');
 
 module.exports = {
-  create: context => ({
+  create: (context) => ({
     CallExpression: (node) => {
       if (node.callee.name === 'require'
           && node.arguments.length > 0
