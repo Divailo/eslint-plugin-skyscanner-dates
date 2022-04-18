@@ -1,4 +1,4 @@
-const { tzDrecated } = require('./messages');
+const { tzDeprecated } = require('./messages');
 
 module.exports = {
   create: (context) => ({
@@ -13,7 +13,7 @@ module.exports = {
       ) {
         context.report(
           node,
-          tzDrecated(
+          tzDeprecated(
             'performing timezone manipulation in saddlebag-localisation',
           ),
         );
@@ -25,7 +25,7 @@ module.exports = {
       ) {
         context.report(
           node,
-          tzDrecated(
+          tzDeprecated(
             'performing timezone manipulation in saddlebag-localisation',
           ),
         );

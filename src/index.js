@@ -22,8 +22,8 @@ module.exports = {
     recommended: {
       plugins: ['skyscanner-dates'],
       rules: {
-        'skyscanner-dates/no-saddlebag-date': 'error',
-        'skyscanner-dates/no-moment': 'error',
+        'skyscanner-dates/no-saddlebag-date': 'warn',
+        'skyscanner-dates/no-moment': 'warn',
         'skyscanner-dates/no-new-date-with-args': 'error',
         'skyscanner-dates/no-new-date-without-args': 'warn',
         'skyscanner-dates/no-date-fns-format': 'warn',

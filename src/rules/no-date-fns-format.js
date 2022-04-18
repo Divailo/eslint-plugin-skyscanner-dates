@@ -13,6 +13,20 @@ module.exports = {
           node,
           formattingDeprecated('using date-fns for formatting'),
         );
+      } else {
+        const callObj = node.callee.object;
+        const callProp = node.callee.property;
+        if (callObj && callProp) {
+          if (
+            callObj.name.match(RegExp(/date(.*)?fns/gi)) &&
+            callProp.name.match(RegExp(/(.*)?format/gi))
+          ) {
+            context.report(
+              node,
+              formattingDeprecated('using date-fns for formatting'),
+            );
+          }
+        }
       }
     },
     ImportDeclaration: (node) => {

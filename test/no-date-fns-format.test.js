@@ -112,5 +112,41 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
         },
       ],
     },
+    {
+      code: 'import dateFns from "date-fns"; dateFns.formatDistance();',
+      errors: [
+        {
+          message:
+            'Stop using date-fns for formatting, use saddlebag-localisation to do all formatting work.',
+        },
+      ],
+    },
+    {
+      code: 'import dateFns from "date-fns"; dateFns.intlFormat();',
+      errors: [
+        {
+          message:
+            'Stop using date-fns for formatting, use saddlebag-localisation to do all formatting work.',
+        },
+      ],
+    },
+    {
+      code: 'const dateFns = require("date-fns"); dateFns.formatDistance();',
+      errors: [
+        {
+          message:
+            'Stop using date-fns for formatting, use saddlebag-localisation to do all formatting work.',
+        },
+      ],
+    },
+    {
+      code: 'const dateFns = require("date-fns"); dateFns.intlFormat();',
+      errors: [
+        {
+          message:
+            'Stop using date-fns for formatting, use saddlebag-localisation to do all formatting work.',
+        },
+      ],
+    },
   ],
 });
