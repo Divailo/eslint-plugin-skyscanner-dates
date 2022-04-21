@@ -1,4 +1,4 @@
-const { formattingDeprecated } = require('./messages');
+const { deprecatedImportAll, formattingDeprecated } = require('./messages');
 
 module.exports = {
   create: (context) => ({
@@ -7,41 +7,44 @@ module.exports = {
         node.callee.name === 'require' &&
         node.arguments.length > 0 &&
         typeof node.arguments[0].value === 'string' &&
-        node.arguments[0].value.match(RegExp(/date-fns\/(.*)?format/gi))
+        node.arguments[0].value.indexOf('date-fns') === 0
       ) {
-        context.report(
-          node,
-          formattingDeprecated('using date-fns for formatting'),
-        );
-      } else {
-        const callObj = node.callee.object;
-        const callProp = node.callee.property;
-        if (callObj && callProp) {
-          if (
-            callObj.name.match(RegExp(/date(.*)?fns/gi)) &&
-            callProp.name.match(RegExp(/(.*)?format/gi))
-          ) {
-            context.report(
-              node,
-              formattingDeprecated('using date-fns for formatting'),
-            );
-          }
+        // require the whole module
+        if (
+          ['date-fns', 'date-fns/fp'].includes(node.arguments[0].value) &&
+          node.parent.id.name !== undefined
+        ) {
+          context.report(
+            node,
+            deprecatedImportAll('require of the whole date-fns package'),
+          );
+          // require format function
+        } else if (node.arguments[0].value.match(RegExp(/format/gi))) {
+          context.report(
+            node,
+            formattingDeprecated('require of date-fns for formatting'),
+          );
         }
       }
     },
     ImportDeclaration: (node) => {
-      if (node.source.value.indexOf('date-fns') >= 0) {
-        if (node.source.value.match(RegExp(/format/gi))) {
-          context.report(
-            node,
-            formattingDeprecated('using date-fns for formatting'),
-          );
-        } else if (node.specifiers) {
+      if (node.source.value.indexOf('date-fns') === 0) {
+        if (node.specifiers) {
           node.specifiers.forEach((item) => {
-            if (item.local.name.match(RegExp(/format/gi))) {
+            // import the whole date-fns
+            if (
+              ['date-fns', 'date-fns/fp'].includes(node.source.value) &&
+              item.type === 'ImportDefaultSpecifier'
+            ) {
               context.report(
                 node,
-                formattingDeprecated('using date-fns for formatting'),
+                deprecatedImportAll('import of the whole date-fns package'),
+              );
+              // import format function
+            } else if (item.local.name.match(RegExp(/format/gi))) {
+              context.report(
+                node,
+                formattingDeprecated('import of date-fns for formatting'),
               );
             }
           });
@@ -52,7 +55,7 @@ module.exports = {
   meta: {
     docs: {
       description:
-        'Stop using date-fns for formatting in favour of using saddlebag-localisation to do all formatting work',
+        'Deprecated the use of date-fns for formatting in favour of using saddlebag-localisation to do all formatting work',
     },
     type: 'problem',
   },

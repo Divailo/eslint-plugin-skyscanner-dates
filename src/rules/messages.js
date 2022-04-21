@@ -1,7 +1,9 @@
 module.exports = {
   deprecated: (issue) => `Deprecated ${issue}, use date-fns package instead.`,
+  deprecatedImportAll: (issue) =>
+    `Deprecated ${issue}, import/require the specific function`,
   formattingDeprecated: (issue) =>
-    `Stop ${issue}, use saddlebag-localisation to do all formatting work.`,
-  tzDeprecated: (issue) =>
-    `Stop ${issue}, use date-fns-tz to do timezone manipulation work instead`,
+    `Deprecated ${issue}, use saddlebag-localisation to do all formatting work.`,
+  deprecatedTZ: (issue) =>
+    `Deprecated ${issue}, use date-fns-tz to do timezone manipulation work instead`,
 };

@@ -14,6 +14,12 @@ This eslint plugin is meant to be used to avoid explicit usage/manupulation of d
 ```bash
 npm install --save-dev eslint-plugin-skyscanner-dates
 ```
+## Rules
+
+* rules **no-moment**, **no-dayjs**, **no-saddlebag-date** for stopping the use of [moment](https://github.com/moment/moment), [moment-timezone](https://github.com/moment/moment-timezone), [dayjs](https://github.com/iamkun/dayjs), [saddlebag-date](https://github.skyscannertools.net/web-engineering/saddlebag/tree/master/packages/saddlebag-date) date libraries.
+* rule **no-date-fns-format** for stopping using the date formatting in [date-fns](https://github.com/date-fns/date-fns/) and stop using date formatting in [date-fns-tz](https://github.com/marnusw/date-fns-tz/).
+* rule **no-saddlebag-localisation-tz** for stopping performing timezone manipulation in [saddlebag-localisation](https://github.skyscannertools.net/web-engineering/saddlebag/tree/master/packages/saddlebag-localisation/)
+* rule **no-new-date-with-args** for stopping using `new Date("some string")`.
 
 ## Usage
 
@@ -44,13 +50,16 @@ Any rule failing will just raise a warning.
 ```
 
 
-Each rule can bbe configured on its own following `eslint` conventions:
+Each rule can be configured on its own following `eslint` conventions:
 ```
 {
   "plugins": ["skyscanner-dates"],
   "rules": {
-    "skyscanner-dates/no-date-fns": "warn",
     "skyscanner-dates/no-moment": "warn",
+    "skyscanner-dates/no-dayjs": "warn",
+    "skyscanner-dates/no-saddlebag-date": "warn",
+    "skyscanner-dates/no-date-fns-format": "warn",
+    "skyscanner-dates/no-saddlebag-localisation-tz": "warn"
     "skyscanner-dates/no-new-date-with-args": "warn",
     "skyscanner-dates/no-new-date-without-args": "warn"
   }
