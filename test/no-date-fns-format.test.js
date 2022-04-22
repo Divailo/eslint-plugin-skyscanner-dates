@@ -80,6 +80,15 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       ],
     },
     {
+      code: 'const date = require("date-fns/format");',
+      errors: [
+        {
+          message:
+            'Deprecated require of date-fns for formatting, use saddlebag-localisation to do all formatting work.',
+        },
+      ],
+    },
+    {
       code: 'const formatDistance = require("date-fns/formatDistance");',
       errors: [
         {

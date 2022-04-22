@@ -9,7 +9,7 @@ module.exports = {
         typeof node.arguments[0].value === 'string' &&
         node.arguments[0].value.indexOf('date-fns') === 0
       ) {
-        // require the whole module
+        // require the whole date-fns package, like 'const DateFns = require("date-fns")'
         if (
           ['date-fns', 'date-fns/fp'].includes(node.arguments[0].value) &&
           node.parent.id.name !== undefined
@@ -18,7 +18,7 @@ module.exports = {
             node,
             deprecatedImportAll('require of the whole date-fns package'),
           );
-          // require format function
+          // require format function, like 'const format = require("date-fns/format")'
         } else if (node.arguments[0].value.match(RegExp(/format/gi))) {
           context.report(
             node,
@@ -29,9 +29,15 @@ module.exports = {
     },
     ImportDeclaration: (node) => {
       if (node.source.value.indexOf('date-fns') === 0) {
-        if (node.specifiers) {
+        // import format function, like 'import format  from "date-fns/format"'
+        if (node.source.value.match(RegExp(/format/gi))) {
+          context.report(
+            node,
+            formattingDeprecated('import of date-fns for formatting'),
+          );
+        } else if (node.specifiers) {
           node.specifiers.forEach((item) => {
-            // import the whole date-fns
+            // import the whole date-fns package, like 'import dateFns from "date-fns"'
             if (
               ['date-fns', 'date-fns/fp'].includes(node.source.value) &&
               item.type === 'ImportDefaultSpecifier'
@@ -40,7 +46,7 @@ module.exports = {
                 node,
                 deprecatedImportAll('import of the whole date-fns package'),
               );
-              // import format function
+              // import format function, like 'import { format } from "date-fns"'
             } else if (item.local.name.match(RegExp(/format/gi))) {
               context.report(
                 node,
