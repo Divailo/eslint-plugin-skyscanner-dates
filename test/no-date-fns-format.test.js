@@ -69,7 +69,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated require of the whole date-fns package, in favour of import/require the specific function',
+            'Deprecated require of the whole date-fns package, in favour of import the specific function',
         },
       ],
     },
@@ -87,7 +87,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated require of the whole date-fns package, in favour of import/require the specific function',
+            'Deprecated require of the whole date-fns package, in favour of import the specific function',
         },
       ],
     },
@@ -204,7 +204,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated import of the whole date-fns package, in favour of import/require the specific function',
+            'Deprecated import of the whole date-fns package, in favour of import the specific function',
         },
       ],
     },
@@ -213,7 +213,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated import of the whole date-fns package, in favour of import/require the specific function',
+            'Deprecated import of the whole date-fns package, in favour of import the specific function',
         },
       ],
     },
@@ -222,7 +222,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated require of the whole date-fns package, in favour of import/require the specific function',
+            'Deprecated require of the whole date-fns package, in favour of import the specific function',
         },
       ],
     },
@@ -231,7 +231,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated require of the whole date-fns package, in favour of import/require the specific function',
+            'Deprecated require of the whole date-fns package, in favour of import the specific function',
         },
       ],
     },

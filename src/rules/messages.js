@@ -1,7 +1,7 @@
 module.exports = {
   deprecated: (issue) => `Deprecated ${issue}, use date-fns package instead.`,
   deprecatedImportAll: (issue) =>
-    `Deprecated ${issue}, in favour of import/require the specific function`,
+    `Deprecated ${issue}, in favour of import the specific function`,
   deprecatedFormatting: (issue) =>
     `Deprecated ${issue}, use saddlebag-localisation to do all formatting work.`,
   deprecatedTZ: (issue) =>
