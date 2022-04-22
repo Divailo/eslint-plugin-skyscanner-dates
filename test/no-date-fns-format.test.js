@@ -15,13 +15,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       code: 'const add = require("date-fns/add");',
     },
     {
-      code: 'const { add } = require("date-fns");',
-    },
-    {
       code: 'const add = require("date-fns/fp/add");',
-    },
-    {
-      code: 'const { add } = require("date-fns/fp");',
     },
     {
       code: 'const { add } = require("xxx-date-fns-xxx/add");',
@@ -71,11 +65,29 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       ],
     },
     {
+      code: 'const { format } = require("date-fns");',
+      errors: [
+        {
+          message:
+            'Deprecated require of the whole date-fns package, in favour of import/require the specific function',
+        },
+      ],
+    },
+    {
       code: 'const format = require("date-fns/fp/format");',
       errors: [
         {
           message:
             'Deprecated require of date-fns for formatting, use saddlebag-localisation to do all formatting work.',
+        },
+      ],
+    },
+    {
+      code: 'const { format } = require("date-fns/fp");',
+      errors: [
+        {
+          message:
+            'Deprecated require of the whole date-fns package, in favour of import/require the specific function',
         },
       ],
     },
@@ -192,7 +204,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated import of the whole date-fns package, import/require the specific function',
+            'Deprecated import of the whole date-fns package, in favour of import/require the specific function',
         },
       ],
     },
@@ -201,7 +213,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated import of the whole date-fns package, import/require the specific function',
+            'Deprecated import of the whole date-fns package, in favour of import/require the specific function',
         },
       ],
     },
@@ -210,7 +222,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated require of the whole date-fns package, import/require the specific function',
+            'Deprecated require of the whole date-fns package, in favour of import/require the specific function',
         },
       ],
     },
@@ -219,7 +231,7 @@ ruleTester.run('no-date-fns-format', rules['no-date-fns-format'], {
       errors: [
         {
           message:
-            'Deprecated require of the whole date-fns package, import/require the specific function',
+            'Deprecated require of the whole date-fns package, in favour of import/require the specific function',
         },
       ],
     },

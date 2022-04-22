@@ -1,4 +1,4 @@
-const { deprecatedImportAll, formattingDeprecated } = require('./messages');
+const { deprecatedFormatting, deprecatedImportAll } = require('./messages');
 
 module.exports = {
   create: (context) => ({
@@ -9,11 +9,9 @@ module.exports = {
         typeof node.arguments[0].value === 'string' &&
         node.arguments[0].value.indexOf('date-fns') === 0
       ) {
-        // require the whole date-fns package, like 'const DateFns = require("date-fns")'
-        if (
-          ['date-fns', 'date-fns/fp'].includes(node.arguments[0].value) &&
-          node.parent.id.name !== undefined
-        ) {
+        // require the whole date-fns package,
+        // like 'const DateFns = require("date-fns")' or 'const { format } = require("date-fns")'
+        if (['date-fns', 'date-fns/fp'].includes(node.arguments[0].value)) {
           context.report(
             node,
             deprecatedImportAll('require of the whole date-fns package'),
@@ -22,7 +20,7 @@ module.exports = {
         } else if (node.arguments[0].value.match(RegExp(/format/gi))) {
           context.report(
             node,
-            formattingDeprecated('require of date-fns for formatting'),
+            deprecatedFormatting('require of date-fns for formatting'),
           );
         }
       }
@@ -33,11 +31,11 @@ module.exports = {
         if (node.source.value.match(RegExp(/format/gi))) {
           context.report(
             node,
-            formattingDeprecated('import of date-fns for formatting'),
+            deprecatedFormatting('import of date-fns for formatting'),
           );
         } else if (node.specifiers) {
           node.specifiers.forEach((item) => {
-            // import the whole date-fns package, like 'import dateFns from "date-fns"'
+            // import the whole date-fns package,like 'import dateFns from "date-fns"'
             if (
               ['date-fns', 'date-fns/fp'].includes(node.source.value) &&
               item.type === 'ImportDefaultSpecifier'
@@ -50,7 +48,7 @@ module.exports = {
             } else if (item.local.name.match(RegExp(/format/gi))) {
               context.report(
                 node,
-                formattingDeprecated('import of date-fns for formatting'),
+                deprecatedFormatting('import of date-fns for formatting'),
               );
             }
           });
