@@ -24,7 +24,7 @@ module.exports = {
       plugins: ['skyscanner-dates'],
       rules: {
         'skyscanner-dates/no-saddlebag-date': 'warn',
-        'skyscanner-dates/no-moment': 'warn',
+        'skyscanner-dates/no-moment': 'error',
         'skyscanner-dates/no-dayjs': 'warn',
         'skyscanner-dates/no-new-date-with-args': 'error',
         'skyscanner-dates/no-new-date-without-args': 'warn',
