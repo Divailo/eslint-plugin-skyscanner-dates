@@ -7,21 +7,21 @@ module.exports = {
         node.callee.name === 'require' &&
         node.arguments.length > 0 &&
         typeof node.arguments[0].value === 'string' &&
-        node.arguments[0].value.indexOf('date-fns') === 0
+        node.arguments[0].value.indexOf('dayjs') === 0
       ) {
-        context.report(node, deprecated('require of date-fns package'));
+        context.report(node, deprecated('require of dayjs package'));
       }
     },
     ImportDeclaration: (node) => {
-      if (node.source.value.indexOf('date-fns') >= 0) {
-        context.report(node, deprecated('import of date-fns package'));
+      if (node.source.value.indexOf('dayjs') >= 0) {
+        context.report(node, deprecated('import of dayjs package'));
       }
     },
   }),
   meta: {
     docs: {
       description:
-        'Deprecate the use of date-fns module in favour of saddlebag-date npm package',
+        'Deprecate the use of dayjs module in favour of date-fns npm package',
     },
     type: 'problem',
   },

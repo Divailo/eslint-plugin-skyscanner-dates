@@ -9,31 +9,31 @@ const ruleTester = new RuleTester({
   },
 });
 
-ruleTester.run('no-date-fns', rules['no-date-fns'], {
+ruleTester.run('no-saddlebag-date', rules['no-saddlebag-date'], {
   valid: [
     {
       code: 'const test = require("test");',
     },
     {
-      code: 'const test = require("test-date-fns");',
+      code: 'const test = require("test-saddlebag-date");',
     },
   ],
   invalid: [
     {
-      code: 'const dateFns = require("date-fns");',
+      code: 'const date = require("saddlebag-date");',
       errors: [
         {
           message:
-            'Deprecated require of date-fns package, use saddlebag-date package instead.',
+            'Deprecated require of saddlebag-date package, use date-fns package instead.',
         },
       ],
     },
     {
-      code: 'import dateFns from "date-fns";',
+      code: 'import date from "saddlebag-date";',
       errors: [
         {
           message:
-            'Deprecated import of date-fns package, use saddlebag-date package instead.',
+            'Deprecated import of saddlebag-date package, use date-fns package instead.',
         },
       ],
     },

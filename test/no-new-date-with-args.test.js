@@ -23,7 +23,7 @@ ruleTester.run('no-new-date-with-args', rules['no-new-date-with-args'], {
       errors: [
         {
           message:
-            'Deprecated new Date(args) expression, use saddlebag-date package instead.',
+            'Deprecated new Date(args) expression, use date-fns package instead.',
         },
       ],
     },
@@ -32,7 +32,7 @@ ruleTester.run('no-new-date-with-args', rules['no-new-date-with-args'], {
       errors: [
         {
           message:
-            'Deprecated new Date(args) expression, use saddlebag-date package instead.',
+            'Deprecated new Date(args) expression, use date-fns package instead.',
         },
       ],
     },
@@ -41,7 +41,7 @@ ruleTester.run('no-new-date-with-args', rules['no-new-date-with-args'], {
       errors: [
         {
           message:
-            'Deprecated new Date(args) expression, use saddlebag-date package instead.',
+            'Deprecated new Date(args) expression, use date-fns package instead.',
         },
       ],
     },

@@ -29,7 +29,7 @@ ruleTester.run('no-new-date-without-args', rules['no-new-date-without-args'], {
       errors: [
         {
           message:
-            'Deprecated new Date() expression, use saddlebag-date package instead.',
+            'Deprecated new Date() expression, use date-fns package instead.',
         },
       ],
     },

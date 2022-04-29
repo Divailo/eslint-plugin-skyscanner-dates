@@ -9,31 +9,31 @@ const ruleTester = new RuleTester({
   },
 });
 
-ruleTester.run('no-moment', rules['no-moment'], {
+ruleTester.run('no-dayjs', rules['no-dayjs'], {
   valid: [
     {
       code: 'const test = require("test");',
     },
     {
-      code: 'const test = require("a-moment");',
+      code: 'const test = require("test-dayjs");',
     },
   ],
   invalid: [
     {
-      code: 'const moment = require("moment");',
+      code: 'const dayjs = require("dayjs");',
       errors: [
         {
           message:
-            'Deprecated require of moment package, use date-fns package instead.',
+            'Deprecated require of dayjs package, use date-fns package instead.',
         },
       ],
     },
     {
-      code: 'import moment from "moment";',
+      code: 'import dayjs from "dayjs";',
       errors: [
         {
           message:
-            'Deprecated import of moment package, use date-fns package instead.',
+            'Deprecated import of dayjs package, use date-fns package instead.',
         },
       ],
     },
