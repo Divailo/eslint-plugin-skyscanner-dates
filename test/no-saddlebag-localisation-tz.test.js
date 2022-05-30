@@ -27,7 +27,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'Deprecated performing timezone manipulation in saddlebag-localisation, use date-fns-tz to do timezone manipulation work instead',
+              'Deprecated performing timezone manipulation in saddlebag-localisation, use date-fns-tz to do timezone manipulation work instead.',
           },
         ],
       },
@@ -36,7 +36,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'Deprecated performing timezone manipulation in saddlebag-localisation, use date-fns-tz to do timezone manipulation work instead',
+              'Deprecated performing timezone manipulation in saddlebag-localisation, use date-fns-tz to do timezone manipulation work instead.',
           },
         ],
       },
