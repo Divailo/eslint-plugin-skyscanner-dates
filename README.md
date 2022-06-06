@@ -25,7 +25,7 @@ npm install --save-dev eslint-plugin-skyscanner-dates
 
 Add to the `.eslintrc.json` file inside the root folder of a linted project:
 
-All the rules will raise an error except `skyscanner-dates/no-new-date-without-args` which will be just a warning.
+The rules `no-moment` and `no-new-date-with-string-args` will raise an error and others will be just a warning. A few months later, we will change the rules to be `error` severity, to force people to honour the rulers.
 ```
 {
   "extends": "plugin:skyscanner-dates/recommended",
@@ -60,8 +60,7 @@ Each rule can be configured on its own following `eslint` conventions:
     "skyscanner-dates/no-saddlebag-date": "warn",
     "skyscanner-dates/no-date-fns-format": "warn",
     "skyscanner-dates/no-saddlebag-localisation-tz": "warn"
-    "skyscanner-dates/no-new-date-with-args": "warn",
-    "skyscanner-dates/no-new-date-without-args": "warn"
+    "skyscanner-dates/no-new-date-with-args": "warn"
   }
 }
 ```
