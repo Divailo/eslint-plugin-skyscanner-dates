@@ -32,7 +32,7 @@ ruleTester.run(
         errors: [
           {
             message:
-              'Deprecated new Date("some string") expression, this can easily cause timezone issues.',
+              'Deprecated new Date("some string") expression, this can easily cause timezone issues. Use date-fns/parseISO instead.',
           },
         ],
       },
