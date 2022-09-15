@@ -18,7 +18,7 @@ module.exports = {
   meta: {
     docs: {
       description:
-        'Deprecate new Date("some string") expression, this can easily cause timezone issues.',
+        'Deprecate new Date("some string") expression, this can easily cause timezone issues. Use date-fns/parseISO instead.',
     },
     type: 'problem',
   },
