@@ -23,13 +23,13 @@ module.exports = {
     recommended: {
       plugins: ['skyscanner-dates'],
       rules: {
-        'skyscanner-dates/no-saddlebag-date': 'warn',
+        'skyscanner-dates/no-saddlebag-date': 'error',
         'skyscanner-dates/no-moment': 'error',
-        'skyscanner-dates/no-dayjs': 'warn',
-        'skyscanner-dates/no-new-date-with-args': 'warn',
+        'skyscanner-dates/no-dayjs': 'error',
+        'skyscanner-dates/no-new-date-with-args': 'error',
         'skyscanner-dates/no-new-date-with-string-args': 'error',
-        'skyscanner-dates/no-date-fns-format': 'warn',
-        'skyscanner-dates/no-saddlebag-localisation-tz': 'warn',
+        'skyscanner-dates/no-date-fns-format': 'error',
+        'skyscanner-dates/no-saddlebag-localisation-tz': 'error',
       },
     },
     warn: {
