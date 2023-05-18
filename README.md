@@ -88,3 +88,7 @@ API docs will now be generated in `docs/api.md`.
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) if you want to contribute.
+
+## Release
+
+See [How to release eslint-plugin-skyscanner-dates](https://skyscanner.atlassian.net/l/cp/oJ1xpf6W) if you want to release a new version.
