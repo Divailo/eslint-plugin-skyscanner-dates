@@ -10,3 +10,7 @@ All notable changes to this project will be documented in this file.
 ### Adjust rules for [dates/timezone Production Standards](https://github.skyscannertools.net/tech-initiatives/production-standards/pull/38)
 * Add rule `no-dayjs`,`no-date-fns-format`,`no-saddlebag-date`,`no-saddlebag-localisation-tz`
 * Delete rule `no-date-fns`
+
+## [3.0.0]
+### Added
+- Changed recommended rules from `warn` to `error`
