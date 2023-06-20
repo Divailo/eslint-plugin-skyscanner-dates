@@ -7,5 +7,5 @@ module.exports = {
   deprecatedTZ: (issue) =>
     `Deprecated ${issue}, use date-fns-tz to do timezone manipulation work instead.`,
   deprecatedNewDate: (issue) =>
-    `Deprecated ${issue}, this can easily cause timezone issues.`,
+    `Deprecated ${issue}, this can easily cause timezone issues. Use date-fns/parseISO instead.`,
 };

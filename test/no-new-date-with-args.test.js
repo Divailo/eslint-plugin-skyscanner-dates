@@ -23,7 +23,7 @@ ruleTester.run('no-new-date-with-args', rules['no-new-date-with-args'], {
       errors: [
         {
           message:
-            'Deprecated new Date(args) expression, this can easily cause timezone issues.',
+            'Deprecated new Date(args) expression, this can easily cause timezone issues. Use date-fns/parseISO instead.',
         },
       ],
     },
@@ -32,7 +32,7 @@ ruleTester.run('no-new-date-with-args', rules['no-new-date-with-args'], {
       errors: [
         {
           message:
-            'Deprecated new Date(args) expression, this can easily cause timezone issues.',
+            'Deprecated new Date(args) expression, this can easily cause timezone issues. Use date-fns/parseISO instead.',
         },
       ],
     },
@@ -41,7 +41,7 @@ ruleTester.run('no-new-date-with-args', rules['no-new-date-with-args'], {
       errors: [
         {
           message:
-            'Deprecated new Date(args) expression, this can easily cause timezone issues.',
+            'Deprecated new Date(args) expression, this can easily cause timezone issues. Use date-fns/parseISO instead.',
         },
       ],
     },
